@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<businessObjectModel modelVersion="1.0" productVersion="7.9.0-SNAPSHOT">
+    <businessObjects>
+        <businessObject qualifiedName="com.company.model.Materiel">
+            <fields>
+                <field type="STRING" length="255" name="materielName" nullable="true" collection="false"/>
+                <field type="INTEGER" length="255" name="price" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.OptionMateriel" fetchType="EAGER" name="options" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.OptionMateriel">
+            <fields>
+                <field type="STRING" length="255" name="optionName" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="optionDescription" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.OrderMateriel">
+            <fields>
+                <field type="LOCALDATETIME" length="255" name="orderDate" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Employee" fetchType="LAZY" name="employee" nullable="false" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Materiel" fetchType="EAGER" name="materielToOrder" nullable="true" collection="true"/>
+                <relationField type="COMPOSITION" reference="com.company.model.Loan" fetchType="EAGER" name="loan" nullable="false" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.Comment" fetchType="EAGER" name="comments" nullable="true" collection="true"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Employee">
+            <fields>
+                <field type="STRING" length="255" name="firstName" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="lastName" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="birthday" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="jobDescription" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Loan">
+            <fields>
+                <field type="INTEGER" length="255" name="price" nullable="false" collection="false"/>
+                <field type="LOCALDATE" length="255" name="expectedPayementDate" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Comment">
+            <fields>
+                <relationField type="AGGREGATION" reference="com.company.model.Employee" fetchType="LAZY" name="employee" nullable="false" collection="false"/>
+                <field type="LOCALDATETIME" length="255" name="commentDate" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="comment" nullable="false" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+    </businessObjects>
+</businessObjectModel>
