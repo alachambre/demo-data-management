@@ -25,7 +25,7 @@
                 <field type="LOCALDATETIME" length="255" name="orderDate" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Employee" fetchType="LAZY" name="employee" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Materiel" fetchType="EAGER" name="materielToOrder" nullable="true" collection="true"/>
-                <relationField type="COMPOSITION" reference="com.company.model.Loan" fetchType="EAGER" name="loan" nullable="false" collection="false"/>
+                <relationField type="COMPOSITION" reference="com.company.model.Loan" fetchType="EAGER" name="loan" nullable="true" collection="false"/>
                 <relationField type="COMPOSITION" reference="com.company.model.Comment" fetchType="EAGER" name="comments" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
