@@ -3,7 +3,7 @@
   "previousDesignerVersion" : "1.9.0-SNAPSHOT",
   "id" : "createMateriels",
   "name" : "createMateriels",
-  "lastUpdate" : 1554904490746,
+  "lastUpdate" : 1555057781539,
   "rows" : [ [ {
     "type" : "formContainer",
     "dimension" : {
@@ -448,6 +448,17 @@
               "value" : {
                 "type" : "variable",
                 "value" : "$item"
+              },
+              "disabled" : {
+                "type" : "constant",
+                "value" : false
+              },
+              "displayedKey" : {
+                "type" : "constant",
+                "value" : "optionName"
+              },
+              "returnedKey" : {
+                "type" : "constant"
               }
             },
             "reference" : "f1926fbd-5e2d-4546-b35b-c174514de6ca",
